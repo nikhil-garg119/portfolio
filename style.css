@@ -10,6 +10,7 @@
     padding: 0 80px;
     margin: auto;
 }
+
 /*navbar styling */
 .navbar{
     position: fixed;
@@ -102,6 +103,9 @@
 section{
     padding: 100px 0;
 }
+.about, .projects{
+    font-family: 'Poppins', sans-serif;
+}
 section .title{
     position: relative;
     text-align: center;
@@ -131,22 +135,6 @@ section .title::after{
     background: #111;
     transform: translateX(-50%);
 }
-
-/* about section styling */
-
-.about{
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    background: #111;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-    color: #fff;
-    min-height: 500px;
-} 
-.about .title::after{
-    content: "who i am";
-}
 .about .about-content,
 .skills .skills-content,
 .tools .tools-content{
@@ -156,6 +144,20 @@ section .title::after{
     align-items: center;
     justify-content: space-between;
 }
+
+/* about section styling */
+.about{
+    display: flex;
+    background: #111;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 500px;
+} 
+.about .title::after{
+    content: "who i am";
+}
+
 .about .about-content .left{
     width: 45%;
 }
@@ -198,10 +200,13 @@ section .title::after{
 }
 
 /* skills and tools section common styling */
-
 .skills, .tools{
-    background: #01316a;
+    display: flex;
+    background: url(images/banner2.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
     color: #fff;
+    min-height: 500px;
 }
 .skills .title::before,
 .tools .title::before{
@@ -209,7 +214,8 @@ section .title::after{
 }
 .skills .title::after,
 .tools .title::after{
-    background: #01316a;
+    background: #072a54;
+    border-radius: 6px;
 }
 .skills .skills-content .card .box,
 .tools .tools-content .card .box{
@@ -224,7 +230,6 @@ section .title::after{
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
-    border: 2px solid #fff;
     border-radius: 6px;
     padding: 20px 25px;
     transition: color 0.3s ease;
@@ -253,17 +258,87 @@ section .title::after{
 }
 
 /* skills section styling */
- 
 .skills .title::after{
     content: "what i provide";
 }
 
-/* tools section styling */
- 
-.tools .title::after{
-    content: "what i use";
+/* projects section styling */
+.projects{
+    background: url(images/banner.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+} 
+.projects .title::after{
+    content: "what i have done";
+    border-radius: 6px;
+}
+.projects .carousel .card{
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px ;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.projects .carousel .card:hover{
+    background: #9491f0;
+}
+.projects .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.projects .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.projects .carousel .card a{
+    color: #9491f0;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.projects .carousel .card:hover a{
+    color: #fff;
+}
+.projects .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #9491f0;
+    transition: all 0.3s ease;
+}
+.projects .carousel .card:hover img{
+    border-color: #fff;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid #9491f0!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: #9491f0!important;
 }
 
+/* tools section styling */
+.tools .title::after{
+    content: "what i can use";
+}
 
 
 /* responsive media query start */
@@ -336,9 +411,7 @@ section .title::after{
     .about .about-content .right{
         flex: 100%;
     }
-    .about{
-        height: 140vh;
-    }
+  
     .skills .skills-content .card,
     .tools .tools-content .card{
         width: calc(50% - 10px);
@@ -356,9 +429,7 @@ section .title::after{
     .home .home-content .text-3{
         font-size: 32px;
     }
-    .about{
-        height: 145vh;
-    }
+  
     .skills .skills-content .card,
     .tools .tools-content .card{
         width: 100%;
@@ -372,7 +443,5 @@ section .title::after{
     .home .home-content .text-3{
         font-size: 27px;
     }
-    .about{
-        height: 160vh;
-    }
+    
 }
