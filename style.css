@@ -5,6 +5,10 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
+
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
@@ -46,6 +50,7 @@
     display: inline-block;
 }
 .navbar .menu li a{
+    display: block;
     color: #fff;
     font-size: 18px;
     font-weight: 500;
@@ -65,6 +70,29 @@
     font-size: 23px;
     cursor: pointer;
     display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #9491f0;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* home section styling */
@@ -97,13 +125,17 @@
     color: #9491f0;
     font-weight: 500;
 }
+.home .home-content i{
+    align-items: center;
+    color: #fff;
+}
 
 /* common content styling */
 
 section{
     padding: 100px 0;
 }
-.about, .projects{
+.about, .projects, .contact, .footer{
     font-family: 'Poppins', sans-serif;
 }
 section .title{
@@ -137,7 +169,8 @@ section .title::after{
 }
 .about .about-content,
 .skills .skills-content,
-.tools .tools-content{
+.tools .tools-content,
+.contact .contact-content{
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -147,7 +180,6 @@ section .title::after{
 
 /* about section styling */
 .about{
-    display: flex;
     background: #111;
     background-size: cover;
     background-attachment: fixed;
@@ -201,7 +233,6 @@ section .title::after{
 
 /* skills and tools section common styling */
 .skills, .tools{
-    display: flex;
     background: url(images/banner2.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
@@ -268,49 +299,51 @@ section .title::after{
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
+    min-height: 500px;
 } 
 .projects .title::after{
     content: "what i have done";
     border-radius: 6px;
 }
-.projects .carousel .card{
+.projects .carousel a .card{
     background: #222;
     border-radius: 6px;
     padding: 25px 35px ;
     text-align: center;
     transition: all 0.3s ease;
 }
-.projects .carousel .card:hover{
+.projects .carousel a .card:hover{
     background: #9491f0;
 }
-.projects .carousel .card .box{
+.projects .carousel a .card .box{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
 }
-.projects .carousel .card:hover .box{
+.projects .carousel a .card:hover .box{
     transform: scale(1.05);
 }
-.projects .carousel .card a{
+.projects .carousel a{
     color: #9491f0;
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
-.projects .carousel .card:hover a{
+.projects .carousel a:hover{
     color: #fff;
 }
-.projects .carousel .card img{
+.projects .carousel a .card img{
     height: 150px;
     width: 150px;
     object-fit: cover;
+    margin-bottom: 20px;
     border-radius: 50%;
     border: 5px solid #9491f0;
     transition: all 0.3s ease;
 }
-.projects .carousel .card:hover img{
+.projects .carousel a .card:hover img{
     border-color: #fff;
 }
 .owl-dots{
@@ -340,6 +373,64 @@ section .title::after{
     content: "what i can use";
 }
 
+/* contact section styling */
+.contact{
+    background: #111;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 500px;
+} 
+.contact .title::after{
+    content: "get in touch";
+}
+.contact .contact-content .text{
+    text-align: justify;
+    margin-bottom: 25px;
+}
+.contact .contact-content .card .box{
+    transition: all 0.3s ease;
+}
+.contact .contact-content .card:hover .box{
+    transform: scale(1.05);
+}
+.contact .contact-content .card{
+    width: calc(50% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    transition: color 0.3s ease;
+    margin-bottom: 20px;
+}
+.contact .contact-content .card:hover{
+    background: #9491f0;
+    border: 2px solid #9491f0;
+}
+.contact .contact-content .card i{
+    font-size: 35px;
+    color: #9491f0;
+    margin-right: 20px;
+}
+.contact .contact-content .card:hover i{
+    font-size: 35px;
+    color: #fff;
+}
+.contact .contact-content .card a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* contact section styling */
+footer{
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+}
+footer span .text{
+    color: #9491f0;
+}
 
 /* responsive media query start */
 @media (max-width: 1300px){
@@ -431,7 +522,8 @@ section .title::after{
     }
   
     .skills .skills-content .card,
-    .tools .tools-content .card{
+    .tools .tools-content .card,
+    .contact .contact-content .card{
         width: 100%;
     }
 }

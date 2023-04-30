@@ -7,21 +7,46 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/aedb4fc6e1.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+    <!-- Adding smooth scrolling to all links -->
+    <script>
+        $(document).ready(function(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+                    window.location.hash = hash;
+                });
+                }
+            });
+        });
+    </script>
+
 </head>
 <body>
+
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <!-- navbar start -->
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+            <div class="logo"><a href="#home">Portfo<span>lio.</span></a></div>
             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Tools</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">About</a></li>
+                <li><a href="#skills" class="menu-btn">Skills</a></li>
+                <li><a href="#projects" class="menu-btn">Projects</a></li>
+                <li><a href="#tools" class="menu-btn">Tools</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -35,7 +60,7 @@
             <div class="home-content">
                 <div class="text-1">Hello, my name is</div>
                 <div class="text-2">Nikhil Garg</div>
-                <div class="text-3">And I'm a <span>Game Designer</span></div>
+                <div class="text-3">And I'm a <span class="typing"></span></div>
             </div>
         </div>
     </section>
@@ -49,7 +74,7 @@
                     <img src="images/1.jpg" alt="">
                 </div>
                 <div class="column right">
-                    <div class="text">I'm Nikhil and I'm a <span>Game Designer</span></div>
+                    <div class="text">I'm Nikhil and I'm a <span class="typing-2"></span></div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatum nisi modi, numquam, neque architecto itaque commodi ea et at recusandae accusamus repellat hic magni incidunt pariatur ex sapiente! Fugiat labore eum enim repellat numquam rerum dolore iste nemo necessitatibus ab aspernatur obcaecati quos delectus quasi quisquam dolorem, quia odit voluptate. Obcaecati distinctio magnam velit dolorum incidunt perferendis? Suscipit, sunt!</p>
                     <a href="#">Download CV</a>
                 </div>
@@ -60,7 +85,7 @@
     <!-- skills section start -->
     <section class="skills" id="skills">
         <div class="max-width">
-            <h2 class="title">My services</h2>
+            <h2 class="title">My skills</h2>
             <div class="skills-content">
                 <div class="card">
                     <div class="box">
@@ -107,24 +132,30 @@
         <div class="max-width">
             <h2 class="title">My Academic Projects</h2>
             <div class="carousel owl-carousel">
-                <div class="card">
-                    <div class="box">
-                        <img src="images/SlashNDash.jpg" alt="">
-                        <a href="#">SlashAndDash</a>
+                <a href="#">
+                    <div class="card">
+                        <div class="box">
+                            <img src="images/SlashNDash.jpg" alt="">
+                        SlashAndDash
+                        </div>
                     </div>
-                </div>
+                </a>
+                <a href="#">
                 <div class="card">
                     <div class="box">
                         <img src="images/DuaLITy.jpg" alt="">
-                        <a href="#">DuaLITy</a>
+                        DuaLITy
                     </div>
                 </div>
+                </a>
+                <a href="#">
                 <div class="card">
                     <div class="box">
                         <img src="images/Tetris.jpg" alt="">
-                        <a href="#">Tetris</a>
+                        Tetris
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </section>
@@ -168,7 +199,49 @@
         </div>
     </section> 
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed incidunt fuga, animi, quisquam, illo iste sapiente repudiandae est ratione maxime quibusdam laborum iure consequuntur aut unde? Qui harum eligendi at tenetur voluptate? Numquam natus aut nostrum error aperiam facilis, illum hic repudiandae omnis ipsa aliquam ullam optio voluptatum necessitatibus eius officiis, fugit odit? Vel molestiae quia in voluptate quos voluptates est voluptatibus libero tenetur blanditiis id facere aliquid labore qui voluptatum quibusdam et, quis suscipit! Repudiandae aperiam numquam molestiae odio sit amet exercitationem officia at culpa? Dolor ut beatae voluptatum vel inventore facere voluptas aperiam consequatur laborum aut. Inventore, vero eos? Fuga iure consectetur recusandae facere perferendis. Odio ut enim recusandae excepturi reiciendis suscipit cum tenetur. Maxime voluptatem soluta quaerat! Quod libero placeat animi. Voluptatibus fuga delectus amet mollitia adipisci, tempore repellat sit quaerat? Vel, maxime. Quasi tempore repellendus maxime fugit explicabo optio perspiciatis libero, dignissimos excepturi alias ipsam, aperiam facere blanditiis vel magnam doloribus adipisci sit asperiores delectus? Corporis autem aliquid minus laborum doloribus ullam sunt itaque alias quos ut velit quas optio expedita ratione, quo, delectus eaque tempora dolores dolorum culpa quidem. Ut in obcaecati ea qui voluptatibus! Repellendus nobis consequatur consectetur itaque. Nemo optio deserunt voluptas inventore?</p> 
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem illum magnam aliquid nulla eum cum!</div>
+                <div class="card">
+                    <a href="mailto:niku110902@gmail.com">
+                        <div class="box">
+                            <i class="fas fa-at"></i>Email Me
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://www.linkedin.com/in/nikhilgarg119/">
+                        <div class="box">
+                            <i class="fab fa-linkedin"></i>LinkedIn
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="box">
+                            <i class="fab fa-twitter"></i>Twitter
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <div class="box">
+                            <i class="fab fa-square-instagram"></i>Instagram
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <span class="text">Nikhil Garg</span> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
