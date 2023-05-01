@@ -259,7 +259,8 @@ section .title::after{
 .skills .skills-content .card,
 .tools .tools-content .card{
     width: calc(33% - 20px);
-    background: #222;
+    color: #fff;
+    background: #9491f0;
     text-align: center;
     border-radius: 6px;
     padding: 20px 25px;
@@ -268,18 +269,9 @@ section .title::after{
 }
 .skills .skills-content .card:hover,
 .tools .tools-content .card:hover{
-    background: #9491f0;
-    border: 2px solid #9491f0;
-}
-.skills .skills-content .card i,
-.tools .tools-content .card i{
-    font-size: 50px;
     color: #9491f0;
-}
-.skills .skills-content .card:hover i,
-.tools .tools-content .card:hover i{
-    font-size: 50px;
-    color: #fff;
+    background: #fff;
+    border: 2px solid #9491f0;
 }
 .skills .skills-content .card .text,
 .tools .tools-content .card .text{
@@ -291,6 +283,14 @@ section .title::after{
 /* skills section styling */
 .skills .title::after{
     content: "what i provide";
+}
+.skills .skills-content .card i{
+    font-size: 50px;
+    color: #fff;
+}
+.skills .skills-content .card:hover i{
+    font-size: 50px;
+    color: #9491f0;
 }
 
 /* projects section styling */
@@ -372,6 +372,14 @@ section .title::after{
 .tools .title::after{
     content: "what i can use";
 }
+.tools .tools-content .card img{
+    width: 50px;
+    height: 55px;
+}
+.tools .tools-content .card img .blender{
+    width: 80px;
+    height: 55px;
+}
 
 /* contact section styling */
 .contact{
@@ -385,6 +393,9 @@ section .title::after{
     content: "get in touch";
 }
 .contact .contact-content .text{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
     text-align: justify;
     margin-bottom: 25px;
 }
@@ -422,7 +433,7 @@ section .title::after{
     font-weight: 500;
 }
 
-/* contact section styling */
+/* footer section styling */
 footer{
     background: #111;
     padding: 20px 23px;
