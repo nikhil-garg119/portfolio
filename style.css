@@ -593,7 +593,7 @@ footer span .text{
     .skills .skills-content .card,
     .tools .tools-content .card,
     .contact .contact-content .card,
-    .project .projects-content .card{
+    .projects .projects-content .card{
         width: 100%;
     }
 }
